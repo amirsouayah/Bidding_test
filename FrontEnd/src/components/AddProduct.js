@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom"
 
 const AddProduct = ({ socket }) => {
   const [name, setName] = useState("")
-  const [price, setPrice] = useState(0)
-  const [price1, setPrice1] = useState(0)
-  const [price2, setPrice2] = useState(0)
+  const [price, setPrice] = useState()
+  const [price1, setPrice1] = useState()
+  const [price2, setPrice2] = useState()
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
@@ -23,11 +23,11 @@ const AddProduct = ({ socket }) => {
           <input type="text" name='name' value={name} onChange={e => setName(e.target.value)} required />
 
           <label htmlFor='price'>BID 1</label>
-          <input type="number" name='price' value={price} onChange={e => setPrice(e.target.value)} required />
+          <input type="number" name='price' value={price} onChange={e => setPrice(e.target.value)} />
           <label htmlFor='price'>BID 2</label>
-          <input type="number" name='price1' value={price1} onChange={e => setPrice1(e.target.value)} required />
+          <input type="number" name='price1' value={price1} onChange={e => setPrice1(e.target.value)} />
           <label htmlFor='price'>BID 3</label>
-          <input type="number" name='price2' value={price2} onChange={e => setPrice2(e.target.value)} required />
+          <input type="number" name='price2' value={price2} onChange={e => setPrice2(e.target.value)} />
 
           <button className='addProduct__cta'>SEND</button>
         </form>
